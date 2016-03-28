@@ -1,0 +1,13 @@
+Title: BSG: Fleet Commander
+Tags: homeworldrm hwrm homeworld bsg battlestar galactica
+GameType: HomeworldRM
+
+// modtype is the type of mod for the game and can be any one of: "MOD", "Locale", "Badges", or "Cursors"
+ModType: MOD
+
+BigFilename: bsgfc.big
+
+WorkshopID: 655048751
+
+Description:
+BSG: Fleet Commander
