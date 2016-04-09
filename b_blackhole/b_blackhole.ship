@@ -1,0 +1,228 @@
+NewShipType = StartShipConfig()
+
+--====================================================================================
+--NAMING AND DESCRIPTION
+--====================================================================================
+
+NewShipType.displayedName = "Centerpoint"
+NewShipType.sobDescription = "???"
+NewShipType.SquadronSize = 1
+NewShipType.alwaysInRenderList = 1
+NewShipType.canHaveShadows = 0
+
+--====================================================================================
+--COST
+--====================================================================================
+
+NewShipType.buildCost = 25002000
+NewShipType.buildTime = 30040
+NewShipType.buildPriorityOrder = 5
+
+--====================================================================================
+--HEALTH
+--====================================================================================
+
+NewShipType.mass = 1700080000
+NewShipType.maxhealth = 800250
+NewShipType.regentime = 2002918
+NewShipType.minRegenTime = 1001464
+NewShipType.sideArmourDamage = 1
+NewShipType.rearArmourDamage = 1
+NewShipType.dustCloudDamageTime = 280
+NewShipType.nebulaDamageTime = 1200
+addShield(NewShipType,"EMP",1800033400,100)
+
+--====================================================================================
+--FORMATION
+--====================================================================================
+
+NewShipType.paradeData = "hgn_carrier_parade"
+NewShipType.passiveFormation = "Broad"
+NewShipType.defensiveFormation = "Delta"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.formationSpacing=15000
+
+--====================================================================================
+--PROPULSION
+--====================================================================================
+NewShipType.thrusterMaxSpeed = .000001
+NewShipType.mainEngineMaxSpeed = .000001
+NewShipType.rotationMaxSpeed = 1
+
+NewShipType.thrusterAccelTime = 5
+NewShipType.thrusterBrakeTime = 1
+NewShipType.mainEngineAccelTime = 10
+NewShipType.mainEngineBrakeTime = 1
+NewShipType.rotationAccelTime = 1
+NewShipType.rotationBrakeTime = 0.1
+
+--====================================================================================
+--MOVEMENT
+--====================================================================================
+
+NewShipType.controllerType = "Ship"
+
+NewShipType.thrusterUsage = 1
+NewShipType.accelerationAngle = 30
+NewShipType.mirrorAngle = 0
+NewShipType.secondaryTurnAngle = 0
+NewShipType.maxBankingAmount = 1
+NewShipType.descendPitch = 1
+NewShipType.goalReachEpsilon = 5000
+NewShipType.slideMoveRange = 5000
+NewShipType.relativeMoveFactor = .01
+
+NewShipType.collisionMultiplier = 1000
+
+--====================================================================================
+--CLASSIFICATION
+--====================================================================================
+
+NewShipType.militaryUnit = 0
+NewShipType.MinimalFamilyToFindPathAround = "None"
+NewShipType.BuildFamily = "NotBuildable"
+NewShipType.AttackFamily = "BigCapitalShip"
+NewShipType.DockFamily = "CantDock"
+NewShipType.AvoidanceFamily = "SuperPriority"
+NewShipType.DisplayFamily = "Megalith"
+NewShipType.AutoFormationFamily = "Fighter"
+NewShipType.CollisionFamily = "Unmoveable"
+NewShipType.ArmourFamily = "HeavyArmour"
+NewShipType.UnitCapsFamily = "SinglePlayerMisc"
+NewShipType.unitCapsNumber = 1
+
+--====================================================================================
+--SENSORS
+--====================================================================================
+
+--====================================================================================
+--COMBAT
+--====================================================================================
+
+
+--====================================================================================
+--UI VISIBILITY
+--====================================================================================
+
+NewShipType.mouseOverMinFadeSize = 0.045
+NewShipType.mouseOverMaxFadeSize = 0.1
+NewShipType.healthBarStyle = 2
+
+--====================================================================================
+--VISIBILITY
+--====================================================================================
+
+NewShipType.nlips = 0
+NewShipType.nlipsRange = 75000
+NewShipType.nlipsFar = 0
+NewShipType.nlipsFarRange = 0
+NewShipType.SMRepresentation = "Invisible"
+NewShipType.meshRenderLimit = 550000000
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 1
+NewShipType.goblinsStartFade = 0
+NewShipType.goblinsOff = 0
+NewShipType.minimumZoomFactor = 0.1
+NewShipType.selectionLimit = 125000000
+NewShipType.preciseATILimit = 1000
+NewShipType.selectionPriority = 5
+NewShipType.SMHighlightDistMin = 0
+NewShipType.SMHighlightDistMax = 0
+
+--====================================================================================
+--ABILITIES
+--====================================================================================
+
+addAbility(NewShipType,"MoveCommand",1,0)
+addAbility(NewShipType,"WaypointMove")
+addAbility(NewShipType,"RetireAbility",1,1)
+
+--====================================================================================
+--DOCKING
+--====================================================================================
+
+addAbility(NewShipType,"CanDock",1,0)
+NewShipType.dockTimeBetweenTwoFormations = 1
+NewShipType.dockTimeBeforeStart = 2
+NewShipType.dockNrOfShipsInDockFormation = 1
+NewShipType.dockFormation = "delta"
+NewShipType.queueFormation = "dockline"
+NewShipType.dontDockWithOtherRaceShips = 1
+NewShipType.ignoreRaceWhenDocking = 0
+addAbility(NewShipType,"CanLaunch")
+NewShipType.launchTimeBetweenTwoFormations = 1
+NewShipType.launchTimeBeforeStart = 2
+NewShipType.launchNrOfShipsInDockFormation = 1
+NewShipType.launchFormation = "delta"
+
+addAbility(NewShipType,"ParadeCommand",1)
+
+--====================================================================================
+--CONSTRUCTION
+--====================================================================================
+
+--====================================================================================
+--SUBSYSTEMS
+--====================================================================================
+LoadModel(NewShipType,1)
+--====================================================================================
+--WEAPONRY
+--====================================================================================
+
+
+--====================================================================================
+--DEATH
+--====================================================================================
+
+NewShipType.battleScarMaxTriBase = 500
+NewShipType.battleScarMaxTriInc = 1000
+NewShipType.sobDieTime = 4
+NewShipType.sobSpecialDieTime = 1
+NewShipType.specialDeathSpeed = 40
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 0
+NewShipType.trailLinger = 0
+--====================================================================================
+--ENGINES AND SOUND
+--====================================================================================
+
+--====================================================================================
+--MISC
+--====================================================================================
+
+NewShipType.isTransferable = 1
+NewShipType.tumbleStaticX = 1
+NewShipType.tumbleStaticY = 1
+NewShipType.tumbleStaticZ = 1
+NewShipType.tumbleDynamicX = 1
+NewShipType.tumbleDynamicY = 1
+NewShipType.tumbleDynamicZ = 1
+NewShipType.tumbleSpecialDynamicX = 1
+NewShipType.tumbleSpecialDynamicY = 1
+NewShipType.tumbleSpecialDynamicZ = 1
+NewShipType.swayUpdateTime = 50
+NewShipType.swayOffsetRandomX = 1
+NewShipType.swayOffsetRandomY = 1
+NewShipType.swayOffsetRandomZ = 1
+NewShipType.swayBobbingFactor = 0.15
+NewShipType.swayRotateFactor = 0
+NewShipType.useTargetRandom = 1
+NewShipType.targetRandomPointXMin = -0.05
+NewShipType.targetRandomPointXMax = 0.05
+NewShipType.targetRandomPointYMin = -0.05
+NewShipType.targetRandomPointYMax = 0.05
+NewShipType.targetRandomPointZMin = -0.05
+NewShipType.targetRandomPointZMax = 0.05
+
+--====================================================================================
+--AI WEIGHTING
+--====================================================================================
+
+NewShipType.fighterValue = 0
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 160
+NewShipType.neutralValue = 60
+NewShipType.antiFighterValue = 0
+NewShipType.antiCorvetteValue = 10
+NewShipType.antiFrigateValue = 120
+NewShipType.totalValue = 95
