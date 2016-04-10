@@ -11,6 +11,7 @@ NewShipType.useEngagementRanges=1
 NewShipType.unitCapsNumber=2
 NewShipType.SquadronSize=1
 NewShipType.formationSpacing=250
+NewShipType.paradeData="kus_mothership_parade"
 NewShipType.passiveFormation="Spear"
 NewShipType.defensiveFormation="x"
 NewShipType.aggressiveFormation="Claw"
@@ -132,6 +133,9 @@ NewShipType.launchFormation="delta"
 addAbility(NewShipType,"ParadeCommand",1);
 addAbility(NewShipType,"WaypointMove");
 addAbility(NewShipType,"HyperSpaceCommand",1,1.1,200,700,0,4);
+addAbility(NewShipType,"ShipHold",1,71,100,"rallypoint","Fighter, Corvette, Utility",200,
+{Fighter="36"},
+{Corvette="75"});
 addAbility(NewShipType,"CanAttack",1,1,0,1,0.35,1.5,"Capturer, Frigate, SmallCapitalShip, BigCapitalShip, Mothership, Utility, Corvette, Fighter","Frontal",
 {SubSystem="FrontalVsSubSystem"},
 {Fighter="frontal_vs_fighter"},
@@ -144,6 +148,9 @@ addAbility(NewShipType,"CanBeRepaired","RepCap");
 addAbility(NewShipType,"RetireAbility",1,1);
 LoadModel(NewShipType,1);
 --StartShipWeaponConfig(NewShipType,"Kus_IonCannon","Weapon_Gun0","Weapon_Gun0");
+StartShipWeaponConfig(NewShipType,"Kus_DestroyerGun","Weapon_MidTurret1","Weapon_MidTurret1");
+--StartShipHardPointConfig(NewShipType,"Generic 1","HardpointGeneric0","Weapon","Generic","Destroyable","Hur_Turret","","","","","","","","");
+StartShipHardPointConfig(NewShipType,"Generic 1","HardpointGeneric0","Weapon","Generic","Destroyable","Hgn_BattleCruiserIonBeamTurret","","","","","","","","");
 addShield(NewShipType,"EMP",310,20);
 NewShipType.battleScarCoverage=2
 NewShipType.battleScarBudgetLow = 400
@@ -154,14 +161,22 @@ NewShipType.specialDeathSpeed=40
 NewShipType.chanceOfSpecialDeath=0
 NewShipType.deadSobFadeTime=0
 NewShipType.trailLinger=4
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_Lrg03",1, 0.40,0,0,0, 0,0,0,50,0,0,0,200,0,0,0,50,0,0,0,50);
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_Lrg02",1, 0.19,0,0,0, 30,-20,200,25,300,150,85,50,0,0,0,85,0,0,0,50);
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_Lrg04",1, 0.13,0,0,0, 50,40,-150,50,65,25,5,25,0,0,0,95,0,0,0,50);
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_Lrg05",1, 0.10,0,0,0, 25,10,-100,30,35,75,62,75,0,0,0,80,0,0,0,50);
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_Sml01",1, 0.06,0,0,0, 80,125,60,75,125,80,65,75,0,0,0,60,0,0,0,50);
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_Sml02",1, 0.05,0,0,0, 25,0,-125,50,80,35,120,75,0,0,0,60,0,0,0,50);
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_Sml03",1, 0.04,0,0,0, 60,95,200,50,15,200,20,125,0,0,0,60,0,0,0,50);
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_Sml04",1, 0.03,0,0,0, 10,60,-300,25,35,80,65,75,0,0,0,60,0,0,0,50);
 setEngineBurn(NewShipType,6,1,1.5,60,1.1,0.1,0.25,120);
 setEngineGlow(NewShipType,1,1,1.02,20,300,50,1.5,{0.7, 0.55, .35, 0.25});
 loadShipPatchList(NewShipType,"data:sound/sfx/ship/Hiigaran/Frigate/"
                              ,0,"Engines/HFrigateEng",""
                              ,1,"Ambience/HFrigateAmb","");
-loadLatchPointList(NewShipType,"SalCap","SalvagePoint1","SalvagePoint2");
-loadLatchPointList(NewShipType,"CapCap","CapturePoint1");
-loadLatchPointList(NewShipType,"RepCap","RepairPoint1","RepairPoint2");
+--loadLatchPointList(NewShipType,"SalCap","SalvagePoint1","SalvagePoint2");
+--loadLatchPointList(NewShipType,"CapCap","CapturePoint1");
+--loadLatchPointList(NewShipType,"RepCap","RepairPoint1","RepairPoint2");
 NewShipType.minFalloffDamageDist=0
 NewShipType.maxFalloffDamageDist=400
 NewShipType.maxFalloffDamage=400

@@ -1,0 +1,51 @@
+HUR_DEFENDER_Launched_OnSet = function(ship)    
+	if(isAnimRunning(ship,"Retract") == 0) then
+		startTime = 0
+		if(isAnimRunning(ship, "Deploy") ~= 0) then
+			startTime = getAnimLength(ship, "Deploy") - getTime(ship, "Deploy")
+			stopAnim(ship, "Deploy")			
+		end		
+		startAnim(ship, "Retract")
+		setTime(ship,"Retract",startTime)
+		setPauseTime(ship, "Retract", 1000)
+	end
+end
+
+HUR_DEFENDER_Normal_OnSet = function(ship)    
+	if(isAnimRunning(ship,"Retract") == 0) then
+		startTime = 0
+		if(isAnimRunning(ship, "Deploy") ~= 0) then
+			startTime = getAnimLength(ship, "Deploy") - getTime(ship, "Deploy")
+			stopAnim(ship, "Deploy")			
+		end		
+		startAnim(ship, "Retract")
+		setTime(ship,"Retract",startTime)
+		setPauseTime(ship, "Retract", 1000)
+	end
+end
+
+HUR_DEFENDER_CodeRed_OnSet = function(ship)
+	if(isAnimRunning(ship, "Deploy") == 0) then
+		startTime = 0
+		if(isAnimRunning(ship, "Retract") ~= 0) then
+			startTime = getAnimLength(ship, "Retract") - getTime(ship, "Retract")
+			stopAnim(ship, "Retract")			
+		end
+		startAnim(ship, "Deploy")		
+		setTime(ship,"Deploy",startTime)        
+		setPauseTime(ship, "Deploy", 1000)
+	end
+end
+
+HUR_DEFENDER_CodeGreen_OnSet = function(ship)    
+	if(isAnimRunning(ship,"Retract") == 0) then
+		startTime = 0
+		if(isAnimRunning(ship, "Deploy") ~= 0) then
+			startTime = getAnimLength(ship, "Deploy") - getTime(ship, "Deploy")
+			stopAnim(ship, "Deploy")			
+		end		
+		startAnim(ship, "Retract")
+		setTime(ship,"Retract",startTime)
+		setPauseTime(ship, "Retract", 1000)
+	end
+end
