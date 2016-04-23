@@ -148,9 +148,17 @@ addAbility(NewShipType,"CanBeRepaired","RepCap");
 addAbility(NewShipType,"RetireAbility",1,1);
 LoadModel(NewShipType,1);
 --StartShipWeaponConfig(NewShipType,"Kus_IonCannon","Weapon_Gun0","Weapon_Gun0");
-StartShipWeaponConfig(NewShipType,"Kus_DestroyerGun","Weapon_MidTurret1","Weapon_MidTurret1");
+StartShipWeaponConfig(NewShipType,"Kus_DestroyerGun","Weapon_FLL","Weapon_FLL");
+StartShipWeaponConfig(NewShipType,"Kus_DestroyerGun","Weapon_FLR","Weapon_FLR");
+StartShipWeaponConfig(NewShipType,"Kus_DestroyerGun","Weapon_MLL","Weapon_MLL");
+StartShipWeaponConfig(NewShipType,"Kus_DestroyerGun","Weapon_MUL","Weapon_MUL");
+StartShipWeaponConfig(NewShipType,"Kus_DestroyerGun","Weapon_MLR","Weapon_MLR");
+StartShipWeaponConfig(NewShipType,"Kus_DestroyerGun","Weapon_MUR","Weapon_MUR");
+StartShipWeaponConfig(NewShipType,"Kus_DestroyerGun","Weapon_RLL","Weapon_RLL");
+StartShipWeaponConfig(NewShipType,"Kus_DestroyerGun","Weapon_RLR","Weapon_RLR");
+--StartShipWeaponConfig(NewShipType,"Kus_DestroyerGun","Weapon_ChinGun","Weapon_ChinGun");
 --StartShipHardPointConfig(NewShipType,"Generic 1","HardpointGeneric0","Weapon","Generic","Destroyable","Hur_Turret","","","","","","","","");
-StartShipHardPointConfig(NewShipType,"Generic 1","HardpointGeneric0","Weapon","Generic","Destroyable","Hgn_BattleCruiserIonBeamTurret","","","","","","","","");
+--StartShipHardPointConfig(NewShipType,"Generic 1","HardpointGeneric0","Weapon","Generic","Destroyable","Hgn_BattleCruiserIonBeamTurret","","","","","","","","");
 addShield(NewShipType,"EMP",310,20);
 NewShipType.battleScarCoverage=2
 NewShipType.battleScarBudgetLow = 400
