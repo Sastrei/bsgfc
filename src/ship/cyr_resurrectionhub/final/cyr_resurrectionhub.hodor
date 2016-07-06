@@ -1,0 +1,12 @@
+## My HODOR Params - by Timmy
+= -$HWRM_BASE=C:\Program Files (x86)\Steam\steamapps\common\Homeworld
+= -$SHIP_NAME=Cyr_ResurrectionHub
+= -$SHADER_MAP=SHADERS.MAP
+# -$SHADE_OPT_LOADDAE=Force8888
+= -$SHADE_OPT_LOADDAE=DXT1
+= -$HOD_SAVE_OPTS=ForceScars FilterScars=thruster,bay
+= -$CONVERT_IN=C:\Users\Stefan\Desktop\BSG ALL\BSGFC 2016\ship\cyr_resurrectionhub\final\cyr_resurrectionhub.dae
+= -$CONVERT_OUT=C:\Users\Stefan\Desktop\BSG ALL\BSGFC 2016\ship\cyr_resurrectionhub\final\cyr_resurrectionhub.HOD
+= -do=convert
+= -action=null
+= -wait
